@@ -6,7 +6,7 @@ import (
 )
 
 func TestFormat(t *testing.T) {
-	want := "Sweetmorn of Chaos, 3136 YOLD"
+	want := "Sweetmorn, Chaos 1, 3136 YOLD"
 	unixStart := time.Date(1970, 1, 1, 0, 0, 0, 0, time.UTC)
 
 	msg := Format(unixStart)

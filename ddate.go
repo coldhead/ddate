@@ -17,7 +17,8 @@ const (
 )
 
 func Format(now time.Time) string {
-	return fmt.Sprintf("%s of %s, %d YOLD", dayNames[(now.YearDay()-1)%hailEris%5], seasonNames[(now.YearDay()-1)/hailEris], now.Year()+initialYearPadding)
+	day := now.YearDay() - 1%5
+	return fmt.Sprintf("%s, %s %d, %d YOLD", dayNames[day%hailEris%5], seasonNames[day/hailEris], day+1, now.Year()+initialYearPadding)
 }
 
 func IsHolyday(now time.Time) (bool, string) {
